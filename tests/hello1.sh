@@ -1,1 +1,0 @@
-echo "first hello world"
