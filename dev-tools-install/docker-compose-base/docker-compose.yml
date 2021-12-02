@@ -1,0 +1,94 @@
+version: '3'
+
+networks:
+  redelab:
+    ipam:
+      driver: default
+
+services:
+
+  # POSTGRES
+  postgressrv:
+    image: postgres:12.2-alpine
+    container_name: "bd-postgres"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+       redelab:
+
+  # MY_SQL
+  mysqlsrv:
+    image: mysql:5.7
+    container_name: "bd-mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "root"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ../mysql/data:/var/lib/mysql
+    networks:
+       redelab:
+
+  # RABBIT_MQ
+  rabbitmqsrv:
+    image: rabbitmq:3-management
+    container_name: "rabbit13"
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "admin"
+    ports:
+      - "3004:15672"
+      - "5672:5672"
+      - "25676:25676"
+    networks:
+      redelab:
+
+  # MONGO
+  mongo:
+    image: mongo
+    container_name: "bd-mongo"
+    ports: 
+      - "27017:27017"
+    volumes:
+      - ../data/mongo:/data/db
+    networks:
+      redelab:
+
+  # REDIS
+  redis:
+    image: redis
+    container_name: redis
+    ports: 
+      - "6379:6379"
+    networks:
+      redelab:
+
+  # ZOOKEEPER
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - 22181:2181
+
+  # KAFKA
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1

@@ -19,6 +19,7 @@ if [ -L "/usr/bin/postman" ];then
     sudo rm -f /usr/bin/postman
 fi
 sudo ln -s /opt/postman/app/Postman /usr/bin/postman
+sudo chmod +x /usr/bin/postman
 
 echo "Creating desktop entry for Postman"
 if [ -L "/tmp/postman.desktop" ];then

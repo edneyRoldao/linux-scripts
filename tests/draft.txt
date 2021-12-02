@@ -1,8 +1,0 @@
-echo("removing apt") 
-sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock;
-
-echo("update apt") 
-sudo apt update
-
-echo("Install snap") 
-sudo apt install snapd
