@@ -3,7 +3,7 @@ echo "### APACHE MAVEN - install process has been started ###"
 echo "#######################################################"
 
 echo "Downloading Apache Maven 3.8.4 ..."
-wget -q https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
+wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
 tar -xzf apache-maven-3.8.4-bin.tar.gz
 rm apache-maven-3.8.4-bin.tar.gz
 

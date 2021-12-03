@@ -3,7 +3,7 @@ echo "### POSTMAN - install process has been started ###"
 echo "##################################################"
 
 echo "Downloading Postman lastest ..."
-wget -q https://dl.pstmn.io/download/latest/linux64
+wget https://dl.pstmn.io/download/latest/linux64
 tar -xzf linux64
 rm linux64
 

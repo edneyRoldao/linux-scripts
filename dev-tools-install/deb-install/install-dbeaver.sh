@@ -4,7 +4,7 @@ echo "##################################################"
 
 echo "Downloading dbeaver-ce ..."
 
-wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
 sudo dpkg -i dbeaver-ce_latest_amd64.deb
 sudo rm -f dbeaver-ce_latest_amd64.deb
 

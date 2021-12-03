@@ -3,7 +3,7 @@ echo "### INTELLIJ IDEA - install process has been started ###"
 echo "########################################################"
 
 echo "Downloading intellij 2021.3 community ..."
-wget -q https://download-cdn.jetbrains.com/idea/ideaIC-2021.3.tar.gz
+wget https://download-cdn.jetbrains.com/idea/ideaIC-2021.3.tar.gz
 tar -xzf ideaIC-2021.3.tar.gz
 rm ideaIC-2021.3.tar.gz
 

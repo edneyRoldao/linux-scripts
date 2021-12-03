@@ -3,7 +3,7 @@ echo "### NODE_JS - install process has been started ###"
 echo "##################################################"
 
 echo "Downloading NodeJS 14.17.0 ..."
-wget -q https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.gz
+wget https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.gz
 tar -xzf node-v14.17.0-linux-x64.tar.gz
 rm node-v14.17.0-linux-x64.tar.gz
 

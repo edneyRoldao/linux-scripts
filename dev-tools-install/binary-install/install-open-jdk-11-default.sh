@@ -3,7 +3,7 @@ echo "### OPEN_JDK 11 - install process has been started ###"
 echo "######################################################"
 
 echo "Downloading OpenJDK 11 ..."
-wget -q https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz
+wget https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz
 tar -xzf openjdk-11.0.1_linux-x64_bin.tar.gz
 rm openjdk-11.0.1_linux-x64_bin.tar.gz
 

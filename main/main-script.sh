@@ -59,7 +59,7 @@ echo "#############################################################"
 
 sudo apt update
 sudo apt -y install software-properties-common apt-transport-https wget
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+wget https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository -y "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
 sudo apt -y install code
@@ -70,7 +70,7 @@ echo "##################################################"
 echo "### SUBLIME - install process has been started ###"
 echo "##################################################"
 
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+wget https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get -y install apt-transport-https
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
@@ -92,7 +92,7 @@ echo "### APACHE MAVEN - install process has been started ###"
 echo "#######################################################"
 
 echo "Downloading Apache Maven 3.8.4 ..."
-wget -q https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
+wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
 tar -xzf apache-maven-3.8.4-bin.tar.gz
 rm apache-maven-3.8.4-bin.tar.gz
 
@@ -118,7 +118,7 @@ echo "### INTELLIJ IDEA - install process has been started ###"
 echo "########################################################"
 
 echo "Downloading intellij 2021.3 community ..."
-wget -q https://download-cdn.jetbrains.com/idea/ideaIC-2021.3.tar.gz
+wget https://download-cdn.jetbrains.com/idea/ideaIC-2021.3.tar.gz
 tar -xzf ideaIC-2021.3.tar.gz
 rm ideaIC-2021.3.tar.gz
 
@@ -157,7 +157,7 @@ echo "### OPEN_JDK 11 - install process has been started ###"
 echo "######################################################"
 
 echo "Downloading OpenJDK 11 ..."
-wget -q https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz
+wget https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz
 tar -xzf openjdk-11.0.1_linux-x64_bin.tar.gz
 rm openjdk-11.0.1_linux-x64_bin.tar.gz
 
@@ -181,7 +181,7 @@ echo "### NODE_JS - install process has been started ###"
 echo "##################################################"
 
 echo "Downloading NodeJS 14.17.0 ..."
-wget -q https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.gz
+wget https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.gz
 tar -xzf node-v14.17.0-linux-x64.tar.gz
 rm node-v14.17.0-linux-x64.tar.gz
 
@@ -205,7 +205,7 @@ echo "### POSTMAN - install process has been started ###"
 echo "##################################################"
 
 echo "Downloading Postman lastest ..."
-wget -q https://dl.pstmn.io/download/latest/linux64
+wget https://dl.pstmn.io/download/latest/linux64
 tar -xzf linux64
 rm linux64
 
@@ -270,7 +270,7 @@ echo "##################################################"
 
 echo "Downloading dbeaver-ce ..."
 
-wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
 sudo dpkg -i dbeaver-ce_latest_amd64.deb
 sudo rm -f dbeaver-ce_latest_amd64.deb
 
@@ -282,7 +282,7 @@ echo "########################################################"
 
 echo "Downloading Chrome ..."
 
-wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo rm -f google-chrome-stable_current_amd64.deb
 
