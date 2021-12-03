@@ -271,7 +271,8 @@ echo "##################################################"
 echo "Downloading dbeaver-ce ..."
 
 wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
-sudo dpgk -i dbeaver-ce_21.3.0_amd64.deb
+sudo dpkg -i dbeaver-ce_21.3.0_amd64.deb
+sudo rm -f dbeaver-ce_21.3.0_amd64.deb
 
 echo "dbeaver-ce install process finished"
 
@@ -282,7 +283,8 @@ echo "########################################################"
 echo "Downloading Chrome ..."
 
 wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpgk -i google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo rm -f google-chrome-stable_current_amd64.deb
 
 echo "Chrome install process finished"
 
@@ -290,9 +292,9 @@ echo "#################################################"
 echo "### SPOTFY - install process has been started ###"
 echo "#################################################"
 
-sudo snap install sportfy --classic
+sudo snap install spotfy --classic
 
-echo "sportfy install process finished"
+echo "spotfy install process finished"
 
 echo "###########################################################"
 echo "### MY_SQL WORKBENCH - install process has been started ###"
