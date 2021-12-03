@@ -18,12 +18,17 @@ echo "###################################################"
 echo "### Operation System Scripts - has been started ###"
 echo "###################################################"
 
-echo "snap config"
+echo "Installing SNAP ..."
 sudo rm /etc/apt/preferences.d/nosnap.pref
 sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/cache/apt/archives/lock
 sudo apt update
 sudo apt -y install snapd
+
+echo "Installing UNZIP"
+sudo apt update
+sudo apt -y install unzip
+
 
 echo "Operation System Scripts finished..."
 
@@ -151,6 +156,32 @@ echo "StartupNotify=true" >> intellij.desktop
 sudo mv intellij.desktop ~/.local/share/applications
 
 echo "Intellij install process finished"
+
+echo "#################################################"
+echo "### GRADLE - install process has been started ###"
+echo "#################################################"
+
+VERSION=7.3.1
+
+echo "Downloading Gradle ${VERSION} community ..."
+wget https://services.gradle.org/distributions/gradle-${VERSION}-bin.zip
+sudo unzip -d . gradle-${VERSION}-bin.zip
+sudo rm -f gradle-${VERSION}-bin.zip
+
+echo "installing gradle into /opt/gradle-${VERSION} ..."
+if [ -d "/opt/gradle-${VERSION}" ];then
+	sudo rm -rf /opt/gradle-${VERSION}
+fi
+sudo mv gradle-${VERSION} /opt/gradle-${VERSION}
+
+echo "Setting up GRADLE_HOME environments for: Gradle ..."
+echo " " >> ~/.bashrc
+echo "# GRADLE environment config" >> ~/.bashrc
+echo "GRADLE_HOME=/opt/gradle-${VERSION}" >> ~/.bashrc
+echo "export GRADLE_HOME" >> ~/.bashrc
+echo "PATH=\$PATH:\$GRADLE_HOME/bin" >> ~/.bashrc
+
+echo "Gradle install process finished"
 
 echo "######################################################"
 echo "### OPEN_JDK 11 - install process has been started ###"
@@ -288,13 +319,13 @@ sudo rm -f google-chrome-stable_current_amd64.deb
 
 echo "Chrome install process finished"
 
-echo "#################################################"
-echo "### SPOTFY - install process has been started ###"
-echo "#################################################"
+echo "##################################################"
+echo "### SPOTIFY - install process has been started ###"
+echo "##################################################"
 
-sudo snap install spotfy --classic
+sudo snap install spotify
 
-echo "spotfy install process finished"
+echo "spotify install process finished"
 
 echo "###########################################################"
 echo "### MY_SQL WORKBENCH - install process has been started ###"
@@ -344,5 +375,5 @@ echo "Creating ending file time log"
 touch end-time-process-log.txt
 
 echo "Just kidding"
-xdg-open https://www.youtube.com/watch?v=o6DLmuibSVE&ab_channel=JasonVoorhees
+xdg-open https://www.youtube.com/watch?v=o6DLmuibSVE&ab_channel=JasonVoorhees?autoplay=1
 
