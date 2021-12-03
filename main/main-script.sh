@@ -82,9 +82,8 @@ echo "#####################################################"
 echo "### TERMINATOR - install process has been started ###"
 echo "#####################################################"
 
-sudo add-apt-repository -y ppa:gnome-terminator
-sudo apt-get update
-sudo apt-get -y install terminator
+sudo apt update
+sudo apt -y install terminator
 
 echo "terminator install process finished"
 
@@ -272,8 +271,8 @@ echo "##################################################"
 echo "Downloading dbeaver-ce ..."
 
 wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
-sudo dpkg -i dbeaver-ce_21.3.0_amd64.deb
-sudo rm -f dbeaver-ce_21.3.0_amd64.deb
+sudo dpkg -i dbeaver-ce_latest_amd64.deb
+sudo rm -f dbeaver-ce_latest_amd64.deb
 
 echo "dbeaver-ce install process finished"
 
