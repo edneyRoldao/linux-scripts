@@ -1,7 +1,6 @@
-#!/bin/bash
-
-echo "OpenJDK 11 - install process has been started"
-cd /tmp || exit
+echo "######################################################"
+echo "### OPEN_JDK 11 - install process has been started ###"
+echo "######################################################"
 
 echo "Downloading OpenJDK 11 ..."
 wget -q https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz
@@ -22,3 +21,4 @@ echo "export JAVA_HOME" >> ~/.bashrc
 echo "PATH=\$PATH:\$JAVA_HOME/bin" >> ~/.bashrc
 
 echo "OpenJDK 11 - install process finished"
+

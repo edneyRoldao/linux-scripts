@@ -1,6 +1,6 @@
-#!/bin/bash
-
-echo "Docker and Docker compose install process has been started"
+echo "####################################################################"
+echo "### DOCKER and DOCKER_COMPOSE - install process has been started ###"
+echo "####################################################################"
 
 sudo apt-get -y remove docker docker-engine docker.io docker-compose containerd runc
 sudo apt-get update
@@ -14,3 +14,4 @@ docker --version
 docker-compose --version
 
 echo "Docker and Docker compose install process finished"
+

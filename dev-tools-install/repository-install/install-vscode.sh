@@ -1,7 +1,6 @@
-#!/bin/bash
-
-echo "VSCode install process has been started"
-cd /tmp || exit
+echo "#############################################################"
+echo "### VISUAL STUDIO CODE - install process has been started ###"
+echo "#############################################################"
 
 sudo apt update
 sudo apt -y install software-properties-common apt-transport-https wget
@@ -11,3 +10,4 @@ sudo apt update
 sudo apt -y install code
 
 echo "VSCode install process finished"
+

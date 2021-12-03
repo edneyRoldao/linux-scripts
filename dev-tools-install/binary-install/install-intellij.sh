@@ -1,7 +1,6 @@
-#!/bin/bash
-
-echo "Intellij install process has been started"
-cd /tmp || exit
+echo "########################################################"
+echo "### INTELLIJ IDEA - install process has been started ###"
+echo "########################################################"
 
 echo "Downloading intellij 2021.3 community ..."
 wget -q https://download-cdn.jetbrains.com/idea/ideaIC-2021.3.tar.gz
@@ -37,3 +36,4 @@ echo "StartupNotify=true" >> intellij.desktop
 sudo mv intellij.desktop ~/.local/share/applications
 
 echo "Intellij install process finished"
+

@@ -1,6 +1,6 @@
-#!/bin/bash
-
-echo "Sublime install process has been started"
+echo "##################################################"
+echo "### SUBLIME - install process has been started ###"
+echo "##################################################"
 
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get -y install apt-transport-https
@@ -9,3 +9,4 @@ sudo apt-get update
 sudo apt-get -y install sublime-text
 
 echo "Sublime install process finished"
+

@@ -1,7 +1,6 @@
-#!/bin/bash
-
-echo "Postman install process has been started"
-cd /tmp || exit
+echo "##################################################"
+echo "### POSTMAN - install process has been started ###"
+echo "##################################################"
 
 echo "Downloading Postman lastest ..."
 wget -q https://dl.pstmn.io/download/latest/linux64
@@ -37,3 +36,4 @@ echo "StartupNotify=true" >> postman.desktop
 sudo mv postman.desktop ~/.local/share/applications
 
 echo "Postman install process finished"
+

@@ -1,14 +1,23 @@
 #!/bin/bash
 
+echo "###################################################"
+echo "### Operation System Scripts - has been started ###"
+echo "###################################################"
+
+cd /tmp || exit
+
 echo "snap config"
 sudo rm /etc/apt/preferences.d/nosnap.pref
 sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/cache/apt/archives/lock
 sudo apt update
-sudo apt install snapd
-#!/bin/bash
+sudo apt -y install snapd
 
-echo "Docker and Docker compose install process has been started"
+echo "Operation System Scripts finished..."
+
+echo "####################################################################"
+echo "### DOCKER and DOCKER_COMPOSE - install process has been started ###"
+echo "####################################################################"
 
 sudo apt-get -y remove docker docker-engine docker.io docker-compose containerd runc
 sudo apt-get update
@@ -22,18 +31,19 @@ docker --version
 docker-compose --version
 
 echo "Docker and Docker compose install process finished"
-#!/bin/bash
 
-echo "GIT install process has been started"
+echo "##############################################"
+echo "### GIT - install process has been started ###"
+echo "##############################################"
 
 sudo apt update
 sudo apt -y install git
 
 echo "GIT install process finished"
-#!/bin/bash
 
-echo "VSCode install process has been started"
-cd /tmp || exit
+echo "#############################################################"
+echo "### VISUAL STUDIO CODE - install process has been started ###"
+echo "#############################################################"
 
 sudo apt update
 sudo apt -y install software-properties-common apt-transport-https wget
@@ -43,9 +53,10 @@ sudo apt update
 sudo apt -y install code
 
 echo "VSCode install process finished"
-#!/bin/bash
 
-echo "Sublime install process has been started"
+echo "##################################################"
+echo "### SUBLIME - install process has been started ###"
+echo "##################################################"
 
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get -y install apt-transport-https
@@ -54,20 +65,20 @@ sudo apt-get update
 sudo apt-get -y install sublime-text
 
 echo "Sublime install process finished"
-#!/bin/bash
 
-echo "terminator install process has been started"
-cd /tmp || exit
+echo "#####################################################"
+echo "### TERMINATOR - install process has been started ###"
+echo "#####################################################"
 
 sudo add-apt-repository -y ppa:gnome-terminator
 sudo apt-get update
 sudo apt-get -y install terminator
 
 echo "terminator install process finished"
-#!/bin/bash
 
-echo "Opera install process has been started"
-cd /tmp || exit
+echo "################################################"
+echo "### OPERA - install process has been started ###"
+echo "################################################"
 
 sudo sh -c 'echo "deb http://deb.opera.com/opera-stable/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
 wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
@@ -75,10 +86,10 @@ sudo apt-get update
 sudo apt-get -y install opera-stable
 
 echo "Opera install process finished"
-#!/bin/bash
 
-echo "Apache Maven install process has been started"
-cd /tmp || exit
+echo "#######################################################"
+echo "### APACHE MAVEN - install process has been started ###"
+echo "#######################################################"
 
 echo "Downloading Apache Maven 3.8.4 ..."
 wget -q https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
@@ -101,10 +112,10 @@ echo "export M2" >> ~/.bashrc
 echo "PATH=\$PATH:\$M2" >> ~/.bashrc
 
 echo "Apache Maven install process finished"
-#!/bin/bash
 
-echo "Intellij install process has been started"
-cd /tmp || exit
+echo "########################################################"
+echo "### INTELLIJ IDEA - install process has been started ###"
+echo "########################################################"
 
 echo "Downloading intellij 2021.3 community ..."
 wget -q https://download-cdn.jetbrains.com/idea/ideaIC-2021.3.tar.gz
@@ -139,10 +150,11 @@ echo "Categories=Development;" >> intellij.desktop
 echo "StartupNotify=true" >> intellij.desktop
 sudo mv intellij.desktop ~/.local/share/applications
 
-echo "Intellij install process finished"#!/bin/bash
+echo "Intellij install process finished"
 
-echo "OpenJDK 11 - install process has been started"
-cd /tmp || exit
+echo "######################################################"
+echo "### OPEN_JDK 11 - install process has been started ###"
+echo "######################################################"
 
 echo "Downloading OpenJDK 11 ..."
 wget -q https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz
@@ -163,10 +175,10 @@ echo "export JAVA_HOME" >> ~/.bashrc
 echo "PATH=\$PATH:\$JAVA_HOME/bin" >> ~/.bashrc
 
 echo "OpenJDK 11 - install process finished"
-#!/bin/bash
 
-echo "NodeJS 14.17 - install process has been started"
-cd /tmp || exit
+echo "##################################################"
+echo "### NODE_JS - install process has been started ###"
+echo "##################################################"
 
 echo "Downloading NodeJS 14.17.0 ..."
 wget -q https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.gz
@@ -187,10 +199,10 @@ echo "export NODE_JS" >> ~/.bashrc
 echo "PATH=\$PATH:\$NODE_JS/bin" >> ~/.bashrc
 
 echo "NodeJS install process finished"
-#!/bin/bash
 
-echo "Postman install process has been started"
-cd /tmp || exit
+echo "##################################################"
+echo "### POSTMAN - install process has been started ###"
+echo "##################################################"
 
 echo "Downloading Postman lastest ..."
 wget -q https://dl.pstmn.io/download/latest/linux64
@@ -225,10 +237,11 @@ echo "Categories=Development;" >> postman.desktop
 echo "StartupNotify=true" >> postman.desktop
 sudo mv postman.desktop ~/.local/share/applications
 
-echo "Postman install process finished"#!/bin/bash
+echo "Postman install process finished"
 
-echo "Oracle JDK 8 - install process has been started"
-cd /tmp || exit
+echo "#######################################################"
+echo "### ORACLE_JDK 8 - install process has been started ###"
+echo "#######################################################"
 
 echo "Downloading Oracle JDK 8 ..."
 wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
@@ -241,6 +254,7 @@ if [ -d "/opt/oracle-jdk1.8.0_131" ];then
 fi
 sudo mv jdk1.8.0_131 /opt/oracle-jdk1.8.0_131
 
+#echo "the following instructions were commented cause OpenJDK 11 will be the default JDK"
 #echo "Setting up JAVA_HOME environment for: Oracle JDK 8 ..."
 #echo " " >> ~/.bashrc
 #echo "# JDK environment config" >> ~/.bashrc
@@ -249,10 +263,10 @@ sudo mv jdk1.8.0_131 /opt/oracle-jdk1.8.0_131
 #echo "PATH=\$PATH:\$JAVA_HOME/bin" >> ~/.bashrc
 
 echo "Oracle JDK 8 install process finished"
-#!/bin/bash
 
-echo "dbeaver-ce install process has been started"
-cd /tmp || exit
+echo "##################################################"
+echo "### DBEAVER - install process has been started ###"
+echo "##################################################"
 
 echo "Downloading dbeaver-ce ..."
 
@@ -260,10 +274,10 @@ wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
 sudo dpgk -i dbeaver-ce_21.3.0_amd64.deb
 
 echo "dbeaver-ce install process finished"
-#!/bin/bash
 
-echo "Chrome install process has been started"
-cd /tmp || exit
+echo "########################################################"
+echo "### GOOGLE CHROME - install process has been started ###"
+echo "########################################################"
 
 echo "Downloading Chrome ..."
 
@@ -271,45 +285,44 @@ wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.de
 sudo dpgk -i google-chrome-stable_current_amd64.deb
 
 echo "Chrome install process finished"
-#!/bin/bash
 
-echo "sportfy install process has been started"
+echo "#################################################"
+echo "### SPOTFY - install process has been started ###"
+echo "#################################################"
 
 sudo snap install sportfy --classic
 
 echo "sportfy install process finished"
-#!/bin/bash
 
-echo "MySQL workbench install process has been started"
+echo "###########################################################"
+echo "### MY_SQL WORKBENCH - install process has been started ###"
+echo "###########################################################"
 
 sudo snap install mysql-workbench-community
 
 echo "MySQL workbench install process finished"
-#!/bin/bash
 
-echo "Robo3t install process has been started"
+echo "##################################################"
+echo "### ROBO_3T - install process has been started ###"
+echo "##################################################"
 
 sudo snap install robo3t-snap
 
 echo "Robo3t install process finished"
-#!/bin/bash
 
-echo "slack install process has been started"
+echo "################################################"
+echo "### SLACK - install process has been started ###"
+echo "################################################"
 
 sudo snap install slack --classic
 
 echo "slack install process finished"
-#!/bin/bash
 
-echo "Sublime install process has been started"
-
-sudo snap install sublime-text --classic
-
-echo "Sublime install process finished"
-#!/bin/bash
-
-echo "skype install process has been started"
+echo "################################################"
+echo "### SKYPE - install process has been started ###"
+echo "################################################"
 
 sudo snap install skype --classic
 
 echo "skype install process finished"
+

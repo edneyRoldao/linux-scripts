@@ -1,7 +1,6 @@
-#!/bin/bash
-
-echo "Apache Maven install process has been started"
-cd /tmp || exit
+echo "#######################################################"
+echo "### APACHE MAVEN - install process has been started ###"
+echo "#######################################################"
 
 echo "Downloading Apache Maven 3.8.4 ..."
 wget -q https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
@@ -24,3 +23,4 @@ echo "export M2" >> ~/.bashrc
 echo "PATH=\$PATH:\$M2" >> ~/.bashrc
 
 echo "Apache Maven install process finished"
+

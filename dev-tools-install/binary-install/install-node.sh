@@ -1,7 +1,6 @@
-#!/bin/bash
-
-echo "NodeJS 14.17 - install process has been started"
-cd /tmp || exit
+echo "##################################################"
+echo "### NODE_JS - install process has been started ###"
+echo "##################################################"
 
 echo "Downloading NodeJS 14.17.0 ..."
 wget -q https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.gz
@@ -22,3 +21,4 @@ echo "export NODE_JS" >> ~/.bashrc
 echo "PATH=\$PATH:\$NODE_JS/bin" >> ~/.bashrc
 
 echo "NodeJS install process finished"
+
