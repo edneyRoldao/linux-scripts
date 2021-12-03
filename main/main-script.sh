@@ -71,18 +71,6 @@ sudo apt -y install code
 
 echo "VSCode install process finished"
 
-echo "##################################################"
-echo "### SUBLIME - install process has been started ###"
-echo "##################################################"
-
-wget https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-sudo apt-get -y install apt-transport-https
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get -y install sublime-text
-
-echo "Sublime install process finished"
-
 echo "#####################################################"
 echo "### TERMINATOR - install process has been started ###"
 echo "#####################################################"
@@ -350,6 +338,14 @@ echo "################################################"
 sudo snap install slack --classic
 
 echo "slack install process finished"
+
+echo "##################################################"
+echo "### SUBLIME - install process has been started ###"
+echo "##################################################"
+
+sudo snap install sublime-text --classic
+
+echo "Sublime install process finished"
 
 echo "################################################"
 echo "### SKYPE - install process has been started ###"
