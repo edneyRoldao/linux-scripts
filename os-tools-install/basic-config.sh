@@ -1,10 +1,6 @@
-#!/bin/bash
-
 echo "###################################################"
 echo "### Operation System Scripts - has been started ###"
 echo "###################################################"
-
-cd /tmp || exit
 
 echo "snap config"
 sudo rm /etc/apt/preferences.d/nosnap.pref

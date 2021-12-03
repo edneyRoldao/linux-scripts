@@ -32,7 +32,6 @@ Runing script:
 - intellij IDEA
 - Visual Studio Code
 - Chrome
-- Opera
 - docker
 - docker-compose
 - terminator
