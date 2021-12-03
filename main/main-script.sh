@@ -1,10 +1,22 @@
 #!/bin/bash
 
+echo "##########################################"
+echo "##### MAIN SCRIPT - has been started #####"
+echo "##########################################"
+
+echo "Moving to temporary directory"
+cd /tmp || exit
+
+echo "removing old time-lapsed log files"
+rm -f init-time-process-log.txt
+rm -f end-time-process-log.txt
+
+echo "Creating init file time log"
+touch init-time-process-log.txt
+
 echo "###################################################"
 echo "### Operation System Scripts - has been started ###"
 echo "###################################################"
-
-cd /tmp || exit
 
 echo "snap config"
 sudo rm /etc/apt/preferences.d/nosnap.pref
@@ -75,17 +87,6 @@ sudo apt-get update
 sudo apt-get -y install terminator
 
 echo "terminator install process finished"
-
-echo "################################################"
-echo "### OPERA - install process has been started ###"
-echo "################################################"
-
-sudo sh -c 'echo "deb http://deb.opera.com/opera-stable/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
-wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
-sudo apt-get update
-sudo apt-get -y install opera-stable
-
-echo "Opera install process finished"
 
 echo "#######################################################"
 echo "### APACHE MAVEN - install process has been started ###"
@@ -327,4 +328,22 @@ echo "################################################"
 sudo snap install skype --classic
 
 echo "skype install process finished"
+
+echo "################################################"
+echo "### OPERA - install process has been started ###"
+echo "################################################"
+
+sudo snap install opera
+
+echo "opera install process finished"
+
+echo "##########################################"
+echo "##### MAIN SCRIPT - PROCESS FINISHED #####"
+echo "##########################################"
+
+echo "Creating ending file time log"
+touch end-time-process-log.txt
+
+echo "Just kidding"
+google-chrome https://www.youtube.com/watch?v=o6DLmuibSVE&ab_channel=JasonVoorhees
 

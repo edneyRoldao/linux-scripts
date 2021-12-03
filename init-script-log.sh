@@ -7,7 +7,7 @@ echo "##########################################"
 echo "Moving to temporary directory"
 cd /tmp || exit
 
-echo "removing old log time files"
+echo "removing old time-lapsed log files"
 rm -f init-time-process-log.txt
 rm -f end-time-process-log.txt
 
