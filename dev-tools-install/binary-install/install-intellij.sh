@@ -13,6 +13,10 @@ if [ -d "/opt/intellij" ];then
 fi
 sudo mv idea-IC-213.5744.223 /opt/intellij
 
+echo "LOG - Increasing the memory heap of the IDE on vmoptions Xms1024 and Xmx2048 ..."
+sudo sed -i 's/Xms128m/Xms1024m/' /opt/intellij/bin/idea64.vmoptions
+sudo sed -i 's/Xmx750m/Xmx2048m/' /opt/intellij/bin/idea64.vmoptions
+
 echo "LOG - Creating symbolic link..."
 if [ -L "/usr/bin/intellij" ];then
     sudo rm -f /usr/bin/idea

@@ -35,11 +35,21 @@ Run main script:
 
 Download Repositories and Docker config.
 ```
-
+curl -o repositories-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/repositories-setup.sh
 ```
 
+Give exec permission to file:
+```
+chmod +x repositories-setup.sh
+```
+
+Run script:
+```
+./repositories-setup.sh
+```
 
 ## Scripts
+- default-jre (java 11)
 - JDK 8 from openJDK
 - JDK 11 from openJDK and JAVA_HOME environment config
 - JDK 8 from Oracle
@@ -48,6 +58,7 @@ Download Repositories and Docker config.
 - Postman
 - git
 - intellij IDEA
+- Eclipse IDE
 - Visual Studio Code
 - Chrome
 - docker

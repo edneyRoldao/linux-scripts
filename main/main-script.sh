@@ -18,19 +18,30 @@ echo "###################################################"
 echo "### Operation System Scripts - has been started ###"
 echo "###################################################"
 
-echo "Installing SNAP ..."
+echo "--------------------------------------------------------"
+echo "LOG - Installing SNAP ..."
 sudo rm /etc/apt/preferences.d/nosnap.pref
 sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/cache/apt/archives/lock
 sudo apt update
 sudo apt -y install snapd
 
-echo "Installing UNZIP"
+echo "--------------------------------------------------------"
+echo "LOG - Installing UNZIP ..."
 sudo apt update
 sudo apt -y install unzip
 
+echo "--------------------------------------------------------"
+echo "LOG - Turning completion case insensitive ..."
+if [ ! -a ~/.inputrc ];then 
+    echo '$include /etc/inputrc' > ~/.inputrc;
+fi
+echo 'set completion-ignore-case On' >> ~/.inputrc
 
-echo "Operation System Scripts finished..."
+echo "###################################################"
+echo "   Operation System Scripts -  HAS BEEN FINISHED   "
+echo "###################################################"
+
 
 echo "####################################################################"
 echo "### DOCKER and DOCKER_COMPOSE - install process has been started ###"
@@ -48,6 +59,14 @@ docker --version
 docker-compose --version
 
 echo "LOG - Docker and Docker compose install process finished"
+
+echo "######################################################"
+echo "### DEFAULT JRE - install process has been started ###"
+echo "######################################################"
+
+sudo apt -y install default-jre
+
+echo "DEFAULT JRE install process finished"
 
 echo "##############################################"
 echo "### GIT - install process has been started ###"
@@ -120,6 +139,10 @@ if [ -d "/opt/intellij" ];then
 	sudo rm -rf /opt/intellij
 fi
 sudo mv idea-IC-213.5744.223 /opt/intellij
+
+echo "LOG - Increasing the memory heap of the IDE on vmoptions Xms1024 and Xmx2048 ..."
+sudo sed -i 's/Xms128m/Xms1024m/' /opt/intellij/bin/idea64.vmoptions
+sudo sed -i 's/Xmx750m/Xmx2048m/' /opt/intellij/bin/idea64.vmoptions
 
 echo "LOG - Creating symbolic link..."
 if [ -L "/usr/bin/intellij" ];then
@@ -372,10 +395,6 @@ sudo snap install opera
 
 echo "opera install process finished"
 
-
-
-
-
 echo "##########################################################################"
 echo "##### Edney development environment initial setup - has been started #####"
 echo "##########################################################################"
@@ -434,10 +453,12 @@ mkdir ~/workspace/abasteceai
 mkdir ~/workspace/speedy
 mkdir ~/workspace/commons-files
 mkdir ~/workspace/java-projects
-mkdir ~/workspace/javascript-projects
+mkdir ~/workspace/node-projects
+mkdir ~/workspace/other-projects
 mkdir ~/workspace/personal
 mkdir ~/workspace/personal/java-projects
-mkdir ~/workspace/personal/javascript-projects
+mkdir ~/workspace/personal/node-projects
+mkdir ~/workspace/personal/other-projects
 
 echo "--------------------------------------------------------------------------"
 echo "LOG - Downloading util scripts, Moving and giving exec permissions"
@@ -457,54 +478,21 @@ echo "# Scripts Utils config" >> ~/.bashrc
 echo "PATH=\$PATH:~/workspace/shell-Scripts" >> ~/.bashrc
 
 echo "--------------------------------------------------------------------------"
-echo "LOG - Cloning personal projects"
-cd ~/workspace/personal/java-projects
-git clone git@github.com:edneyRoldao/spring-data-unit-tests-samples.git
-git clone git@github.com:edneyRoldao/open-feign-tests.git
-git clone git@github.com:edneyRoldao/rabbitmq-with-spring.git
-cd ~/workspace/personal/javascript-projects
-git clone git@github.com:edneyRoldao/aulas-modulo-1.git
-git clone git@github.com:edneyRoldao/sdk-ecommerce.git
-
-echo "--------------------------------------------------------------------------"
-echo "LOG - Iterative projects"
-cd ~/workspace/java-projects
-git clone git@ssh.dev.azure.com:v3/IterativeProjetos/RoadCard/rntrc-back-pedidos
-git clone git@ssh.dev.azure.com:v3/IterativeProjetos/RoadCard/rntrc-back-admin
-git clone git@ssh.dev.azure.com:v3/IterativeProjetos/RoadCard/rntrc-back-oauth
-cd ~/workspace/javascript-projects
-git clone git@ssh.dev.azure.com:v3/IterativeProjetos/RoadCard/rntrc-front
-
-echo "--------------------------------------------------------------------------"
-echo "LOG - Abastece-ai projects"
-cd ~/workspace/java-projects
-git clone git@gitlab.eai.com.br:project-grups/wallet/core.git
-git clone git@gitlab.eai.com.br:project-grups/wallet/payment-new.git
-git clone git@gitlab.eai.com.br:project-grups/wallet/backoffice-new.git
-git clone git@gitlab.eai.com.br:project-grups/wallet/commons-lib-new.git
-git clone git@gitlab.eai.com.br:project-grups/wallet/partner-services.git
-git clone git@gitlab.eai.com.br:project-grups/wallet/ecommerce-service-provider.git
-cd ~/workspace/javascript-projects
-git clone git@gitlab.eai.com.br:project-grups/wallet/ecommerce-api-gateway.git
-git clone git@gitlab.eai.com.br:project-grups/wallet/ecommerce-sdk.git
-git clone git@gitlab.eai.com.br:project-grups/wallet/partner-api-gateway.git
-git clone git@gitlab.eai.com.br:project-grups/wallet/mobile-api-gateway.git
-
-echo "--------------------------------------------------------------------------"
 echo "LOG - Downloading docker-compose"
 cd ~/workspace/docker
 curl -o docker-compose.yml https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/dev-tools-install/docker-compose-base/docker-compose.yml
 
-
 echo "--------------------------------------------------------------------------"
-echo "LOG - Personal config has been finished ..."
-
-
+echo "Restart PC to run the second script"
+echo "LOG - Edney development environment initial setup - has been finished"
 
 
 echo "##########################################"
 echo "##### MAIN SCRIPT - PROCESS FINISHED #####"
 echo "##########################################"
+
+echo "Moving to temporary directory"
+cd /tmp || exit
 
 echo "Creating ending file time log"
 touch end-time-process-log.txt
@@ -516,3 +504,4 @@ echo "  ***** ALL PROCESSES HAS BEEN FINISHED *****  "
 echo ""
 echo "-----------------------------------------------"
 echo "-----------------------------------------------"
+
