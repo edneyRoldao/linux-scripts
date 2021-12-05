@@ -1,4 +1,6 @@
-#!/bin/bash
+
+
+
 
 echo "##########################################################################"
 echo "##### Edney development environment initial setup - has been started #####"

@@ -17,6 +17,9 @@ curl -o main-script.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils
 Giving exec permission to file:
 chmod +x main-script.sh
 
+Need to export SSH_API_KEY environment to make personal script works.
+export SSH_API_KEY=my_secret
+
 Runing script:
 ./main-script.sh
 ```
