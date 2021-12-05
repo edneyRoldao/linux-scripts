@@ -10,19 +10,34 @@ I create as well a script generator that gathers all scripts that fit my needs i
 
 ## Commands to run main scritp
 
-```
 download main script:
+```
 curl -o main-script.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/main/main-script.sh
+```
 
-Giving exec permission to file:
+Give exec permission to file:
+```
 chmod +x main-script.sh
+```
 
 Need to export SSH_API_KEY environment to make personal script works.
-export SSH_API_KEY=my_secret
+```
+export SSH_API_KEY=wont-works-if-you-dont-know-this
+```
 
-Runing script:
+Run main script:
+```
 ./main-script.sh
 ```
+
+## Restart pc after run main-script
+
+
+Download Repositories and Docker config.
+```
+
+```
+
 
 ## Scripts
 - JDK 8 from openJDK
