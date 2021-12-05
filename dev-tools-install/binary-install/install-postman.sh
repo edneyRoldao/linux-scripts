@@ -2,25 +2,25 @@ echo "##################################################"
 echo "### POSTMAN - install process has been started ###"
 echo "##################################################"
 
-echo "Downloading Postman lastest ..."
+echo "LOG - Downloading Postman lastest ..."
 wget https://dl.pstmn.io/download/latest/linux64
 tar -xzf linux64
 rm linux64
 
-echo "Postman lastest into /opt/postman ..."
+echo "LOG - Postman lastest into /opt/postman ..."
 if [ -d "/opt/postman" ];then
 	sudo rm -rf /opt/postman
 fi
 sudo mv Postman /opt/postman
 
-echo "Creating symbolic link..."
+echo "LOG - Creating symbolic link..."
 if [ -L "/usr/bin/postman" ];then
     sudo rm -f /usr/bin/postman
 fi
 sudo ln -s /opt/postman/app/Postman /usr/bin/postman
 sudo chmod +x /usr/bin/postman
 
-echo "Creating desktop entry for Postman"
+echo "LOG - Creating desktop entry for Postman"
 if [ -L "/tmp/postman.desktop" ];then
     sudo rm -f /tmp/postman.desktop
 fi
@@ -35,5 +35,5 @@ echo "Categories=Development;" >> postman.desktop
 echo "StartupNotify=true" >> postman.desktop
 sudo mv postman.desktop ~/.local/share/applications
 
-echo "Postman install process finished"
+echo "LOG - Postman install process finished"
 

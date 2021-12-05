@@ -13,5 +13,5 @@ sudo usermod -aG docker $USER
 docker --version
 docker-compose --version
 
-echo "Docker and Docker compose install process finished"
+echo "LOG - Docker and Docker compose install process finished"
 

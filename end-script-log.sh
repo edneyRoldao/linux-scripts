@@ -5,6 +5,10 @@ echo "##########################################"
 echo "Creating ending file time log"
 touch end-time-process-log.txt
 
-echo "Just kidding"
-xdg-open https://www.youtube.com/watch?v=o6DLmuibSVE&ab_channel=JasonVoorhees?autoplay=1
-
+echo "-----------------------------------------------"
+echo "-----------------------------------------------"
+echo ""
+echo "  ***** ALL PROCESSES HAS BEEN FINISHED *****  "
+echo ""
+echo "-----------------------------------------------"
+echo "-----------------------------------------------"
