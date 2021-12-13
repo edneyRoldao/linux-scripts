@@ -70,6 +70,7 @@ curl -o ipiranga-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao
 curl -o iterative-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/iterative-exchange-setup.sh
 curl -o speedy-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/speedy-exchange-setup.sh
 curl -o docker-start.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/docker-start.sh
+curl -o ssh-tunel-abasteceai-db-dev.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/ssh-tunel-abasteceai-db-dev.sh
 mv *exchange-setup*.sh ~/workspace/shell-Scripts
 mv docker-start.sh ~/workspace/shell-Scripts
 sudo chmod +x ~/workspace/shell-Scripts/*.sh
