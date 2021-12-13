@@ -1,0 +1,5 @@
+### About Partitions
+https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-storage-devices-in-linux
+
+### About Root user
+https://www.wikihow.com/Become-Root-in-Linux

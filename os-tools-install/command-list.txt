@@ -1,0 +1,12 @@
+Enter as root:
+--------------
+
+Update root password (just one time when you install the OS)
+$ sudo passwd root 
+
+change to root user
+$ su -
+
+Give all access to a file or folder to all users
+$ sudo chmod 777
+
