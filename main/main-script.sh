@@ -466,13 +466,17 @@ mkdir ~/workspace
 mkdir ~/workspace/docker
 mkdir ~/workspace/shell-Scripts
 mkdir ~/workspace/iterative
+mkdir ~/workspace/iterative/files
 mkdir ~/workspace/abasteceai
+mkdir ~/workspace/abasteceai/files
 mkdir ~/workspace/speedy
+mkdir ~/workspace/speedy/files
 mkdir ~/workspace/commons-files
 mkdir ~/workspace/java-projects
 mkdir ~/workspace/node-projects
 mkdir ~/workspace/other-projects
 mkdir ~/workspace/personal
+mkdir ~/workspace/personal/files
 mkdir ~/workspace/personal/java-projects
 mkdir ~/workspace/personal/node-projects
 mkdir ~/workspace/personal/other-projects
@@ -499,6 +503,24 @@ echo "--------------------------------------------------------------------------
 echo "LOG - Downloading docker-compose"
 cd ~/workspace/docker
 curl -o docker-compose.yml https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/dev-tools-install/docker-compose-base/docker-compose.yml
+
+echo "--------------------------------------------------------------------------"
+echo "LOG - Downloading abasteceai files"
+cd ~/workspace/abasteceai/files
+curl -o settings.xml https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/settings.xml
+curl -o eai-bifrost-dev.pem https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/eai-bifrost-dev.pem
+
+echo "--------------------------------------------------------------------------"
+echo "LOG - Downloading speedy files"
+cd ~/workspace/speedy/files
+curl -o settings.xml https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-speedy/settings.xml
+
+echo "--------------------------------------------------------------------------"
+echo "LOG - Downloading iterative files"
+cd ~/workspace/iterative/files
+curl -o IterativePFsense-UDP4-1194-ca.crt https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-iterative/IterativePFsense-UDP4-1194-ca.crt
+curl -o IterativePFsense-UDP4-1194-config.ovpn https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-iterative/IterativePFsense-UDP4-1194-config.ovpn
+curl -o IterativePFsense-UDP4-1194-tls.key https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-iterative/IterativePFsense-UDP4-1194-tls.key
 
 echo "--------------------------------------------------------------------------"
 echo "Restart PC to run the second script"

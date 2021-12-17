@@ -91,6 +91,24 @@ cd ~/workspace/docker
 curl -o docker-compose.yml https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/dev-tools-install/docker-compose-base/docker-compose.yml
 
 echo "--------------------------------------------------------------------------"
+echo "LOG - Downloading abasteceai files"
+cd ~/workspace/abasteceai/files
+curl -o settings.xml https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/settings.xml
+curl -o eai-bifrost-dev.pem https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/eai-bifrost-dev.pem
+
+echo "--------------------------------------------------------------------------"
+echo "LOG - Downloading speedy files"
+cd ~/workspace/speedy/files
+curl -o settings.xml https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-speedy/settings.xml
+
+echo "--------------------------------------------------------------------------"
+echo "LOG - Downloading iterative files"
+cd ~/workspace/iterative/files
+curl -o IterativePFsense-UDP4-1194-ca.crt https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-iterative/IterativePFsense-UDP4-1194-ca.crt
+curl -o IterativePFsense-UDP4-1194-config.ovpn https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-iterative/IterativePFsense-UDP4-1194-config.ovpn
+curl -o IterativePFsense-UDP4-1194-tls.key https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-iterative/IterativePFsense-UDP4-1194-tls.key
+
+echo "--------------------------------------------------------------------------"
 echo "Restart PC to run the second script"
 echo "LOG - Edney development environment initial setup - has been finished"
 
