@@ -52,13 +52,17 @@ mkdir ~/workspace
 mkdir ~/workspace/docker
 mkdir ~/workspace/shell-Scripts
 mkdir ~/workspace/iterative
+mkdir ~/workspace/iterative/files
 mkdir ~/workspace/abasteceai
+mkdir ~/workspace/abasteceai/files
 mkdir ~/workspace/speedy
+mkdir ~/workspace/speedy/files
 mkdir ~/workspace/commons-files
 mkdir ~/workspace/java-projects
 mkdir ~/workspace/node-projects
 mkdir ~/workspace/other-projects
 mkdir ~/workspace/personal
+mkdir ~/workspace/personal/files
 mkdir ~/workspace/personal/java-projects
 mkdir ~/workspace/personal/node-projects
 mkdir ~/workspace/personal/other-projects
