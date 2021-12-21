@@ -95,6 +95,7 @@ echo "LOG - Downloading abasteceai files"
 cd ~/workspace/abasteceai/files
 curl -o settings.xml https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/settings.xml
 curl -o eai-bifrost-dev.pem https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/eai-bifrost-dev.pem
+curl -o aws-vpn-client-config.ovpn https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/aws-vpn-client-config.ovpn
 
 echo "--------------------------------------------------------------------------"
 echo "LOG - Downloading speedy files"
@@ -111,5 +112,3 @@ curl -o IterativePFsense-UDP4-1194-tls.key https://raw.githubusercontent.com/edn
 echo "--------------------------------------------------------------------------"
 echo "Restart PC to run the second script"
 echo "LOG - Edney development environment initial setup - has been finished"
-
-
