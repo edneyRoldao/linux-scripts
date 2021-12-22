@@ -55,6 +55,9 @@ mkdir ~/workspace/iterative
 mkdir ~/workspace/iterative/files
 mkdir ~/workspace/abasteceai
 mkdir ~/workspace/abasteceai/files
+mkdir ~/workspace/abasteceai/database
+mkdir ~/workspace/abasteceai/database/local
+mkdir ~/workspace/abasteceai/database/local/dumps
 mkdir ~/workspace/speedy
 mkdir ~/workspace/speedy/files
 mkdir ~/workspace/commons-files
@@ -68,15 +71,18 @@ mkdir ~/workspace/personal/node-projects
 mkdir ~/workspace/personal/other-projects
 
 echo "--------------------------------------------------------------------------"
-echo "LOG - Downloading util scripts, Moving and giving exec permissions"
-curl -o edy-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/edy-exchange-setup.sh
-curl -o ipiranga-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/ipiranga-exchange-setup.sh
-curl -o iterative-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/iterative-exchange-setup.sh
-curl -o speedy-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/speedy-exchange-setup.sh
+echo "LOG - Downloading util scripts, Moving and giving exec permission"
+curl -o abasteceai-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/abasteceai-exchange-setup.sh
+curl -o db-import-abasteceai-local.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/db-import-abasteceai-local.sh
 curl -o docker-start.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/docker-start.sh
+curl -o edy-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/edy-exchange-setup.sh
+curl -o iterative-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/iterative-exchange-setup.sh
+curl -o jdk8-exchange.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/jdk8-exchange.sh
+curl -o jdk11-exchange.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/jdk11-exchange.sh
+curl -o speedy-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/speedy-exchange-setup.sh
 curl -o ssh-tunel-abasteceai-db-dev.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/ssh-tunel-abasteceai-db-dev.sh
-mv *exchange-setup*.sh ~/workspace/shell-Scripts
-mv docker-start.sh ~/workspace/shell-Scripts
+
+mv *.sh ~/workspace/shell-Scripts
 sudo chmod +x ~/workspace/shell-Scripts/*.sh
 
 echo "--------------------------------------------------------------------------"
