@@ -99,6 +99,25 @@ sudo apt -y install network-manager-openvpn-gnome
 echo "OPEN VPN - install process finished"
 
 
+echo "#########################################################"
+echo "### AWS VPN CLIENT - install process has been started ###"
+echo "#########################################################"
+
+echo "LOG - adding apt-key"
+wget -q -O - https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo/awsvpnclient_public_key.asc | sudo apt-key add -
+
+echo "LOG - adding to repo to /etc/apt/sources.list.d/aws-vpn-client.list"
+echo "deb [arch=amd64] https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo ubuntu-20.04 main" | sudo tee /etc/apt/sources.list.d/aws-vpn-client.list
+
+echo "updating apt-get"
+sudo apt-get update
+
+echo "LOG - installing client"
+sudo apt-get install awsvpnclient
+
+echo "#########################################################"
+echo "#### LOG - AWS VPN CLIENT - install process finished ####"
+echo "#########################################################"
 echo "#####################################################"
 echo "### TERMINATOR - install process has been started ###"
 echo "#####################################################"
@@ -469,6 +488,9 @@ mkdir ~/workspace/iterative
 mkdir ~/workspace/iterative/files
 mkdir ~/workspace/abasteceai
 mkdir ~/workspace/abasteceai/files
+mkdir ~/workspace/abasteceai/database
+mkdir ~/workspace/abasteceai/database/local
+mkdir ~/workspace/abasteceai/database/local/dumps
 mkdir ~/workspace/speedy
 mkdir ~/workspace/speedy/files
 mkdir ~/workspace/commons-files
@@ -482,15 +504,18 @@ mkdir ~/workspace/personal/node-projects
 mkdir ~/workspace/personal/other-projects
 
 echo "--------------------------------------------------------------------------"
-echo "LOG - Downloading util scripts, Moving and giving exec permissions"
-curl -o edy-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/edy-exchange-setup.sh
-curl -o ipiranga-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/ipiranga-exchange-setup.sh
-curl -o iterative-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/iterative-exchange-setup.sh
-curl -o speedy-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/speedy-exchange-setup.sh
+echo "LOG - Downloading util scripts, Moving and giving exec permission"
+curl -o abasteceai-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/abasteceai-exchange-setup.sh
+curl -o db-import-abasteceai-local.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/db-import-abasteceai-local.sh
 curl -o docker-start.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/docker-start.sh
+curl -o edy-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/edy-exchange-setup.sh
+curl -o iterative-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/iterative-exchange-setup.sh
+curl -o jdk8-exchange.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/jdk8-exchange.sh
+curl -o jdk11-exchange.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/jdk11-exchange.sh
+curl -o speedy-exchange-setup.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/speedy-exchange-setup.sh
 curl -o ssh-tunel-abasteceai-db-dev.sh https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/base-scripts/ssh-tunel-abasteceai-db-dev.sh
-mv *exchange-setup*.sh ~/workspace/shell-Scripts
-mv docker-start.sh ~/workspace/shell-Scripts
+
+mv *.sh ~/workspace/shell-Scripts
 sudo chmod +x ~/workspace/shell-Scripts/*.sh
 
 echo "--------------------------------------------------------------------------"
@@ -509,6 +534,7 @@ echo "LOG - Downloading abasteceai files"
 cd ~/workspace/abasteceai/files
 curl -o settings.xml https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/settings.xml
 curl -o eai-bifrost-dev.pem https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/eai-bifrost-dev.pem
+curl -o aws-vpn-client-config.ovpn https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-abasteceai/aws-vpn-client-config.ovpn
 
 echo "--------------------------------------------------------------------------"
 echo "LOG - Downloading speedy files"
@@ -525,8 +551,6 @@ curl -o IterativePFsense-UDP4-1194-tls.key https://raw.githubusercontent.com/edn
 echo "--------------------------------------------------------------------------"
 echo "Restart PC to run the second script"
 echo "LOG - Edney development environment initial setup - has been finished"
-
-
 echo "##########################################"
 echo "##### MAIN SCRIPT - PROCESS FINISHED #####"
 echo "##########################################"

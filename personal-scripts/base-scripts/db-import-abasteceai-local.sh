@@ -28,6 +28,10 @@ echo "Executing dump into bd-mysql docker container"
 echo "warning: make sure whether MySQL container name, MySQL username and MySQL password are right to run the next script"
 docker exec -i bd-mysql mysql -uroot -proot < ~/workspace/abasteceai/database/local/merged_files/$1.sql
 
+echo " LOG -------------------------------- "
+echo "Removing Merged_files folder"
+rm -R ~/workspace/abasteceai/database/local/merged_files
+
 echo "##############################################################################################"
 echo "### Process Has been done - the $1 database is now full of data to perform your tests ###"
 echo "##############################################################################################"
