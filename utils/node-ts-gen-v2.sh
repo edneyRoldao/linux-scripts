@@ -45,6 +45,7 @@ echo "  \"keywords\": []," >> package.json
 echo "  \"scripts\": {" >> package.json
 echo "    \"build\": \"tsc\"," >> package.json
 echo "    \"start\": \"yarn build && node dist/src/index.js\"," >> package.json
+echo "    \"start:dev\": \"ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/index.ts\"," >> package.json
 echo "    \"test\": \"test\"," >> package.json
 echo "    \"lint\": \"eslint ./src ./test --ext .ts\"," >> package.json
 echo "    \"lint:fix\": \"eslint ./src ./test --ext .ts --fix\"" >> package.json
@@ -56,11 +57,13 @@ echo "-------------------------------------"
 echo "***** LOG - Installing dev dependencies"
 yarn add -D eslint
 yarn add -D typescript
+yarn add -D ts-node-dev
 yarn add -D @types/node
 yarn add -D @types/express
 yarn add -D @types/module-alias
 yarn add -D @typescript-eslint/parser
 yarn add -D @typescript-eslint/eslint-plugin
+
 
 echo "-------------------------------------"
 echo "***** LOG - Installing dependencies"
