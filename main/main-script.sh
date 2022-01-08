@@ -407,6 +407,14 @@ sudo snap install eclipse --classic
 
 echo "Eclipse install process finished"
 
+echo "#####################################################"
+echo "### HEROKU CLI - install process has been started ###"
+echo "#####################################################"
+
+sudo snap install heroku --classic
+
+echo "HEROKU CLI install process finished"
+
 echo "##################################################"
 echo "### DBEAVER - install process has been started ###"
 echo "##################################################"
