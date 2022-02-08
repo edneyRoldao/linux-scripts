@@ -557,6 +557,15 @@ curl -o IterativePFsense-UDP4-1194-config.ovpn https://raw.githubusercontent.com
 curl -o IterativePFsense-UDP4-1194-tls.key https://raw.githubusercontent.com/edneyRoldao/linux-utils/main/personal-scripts/files-iterative/IterativePFsense-UDP4-1194-tls.key
 
 echo "--------------------------------------------------------------------------"
+echo "LOG - Installing nodemon"
+npm install --global nodemon
+
+echo "--------------------------------------------------------------------------"
+echo "LOG - Installing nodemon"
+npm install --global yarn
+
+
+echo "--------------------------------------------------------------------------"
 echo "Restart PC to run the second script"
 echo "LOG - Edney development environment initial setup - has been finished"
 echo "##########################################"
