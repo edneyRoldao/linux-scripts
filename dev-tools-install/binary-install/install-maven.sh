@@ -11,7 +11,7 @@ echo "installing Apache Maven into /opt/apache-maven-3.6.3 ..."
 if [ -d "/opt/apache-maven-3.6.3" ];then
 	sudo rm -rf /opt/apache-maven-3.6.3
 fi
-sudo mv apache-maven-3.8.4 /opt/apache-maven-3.6.3
+sudo mv apache-maven-3.6.3 /opt/apache-maven-3.6.3
 
 echo "LOG - Setting up MAVEN_HOME, M2_HOME and M2 environments for: Maven ..."
 echo " " >> ~/.bashrc
