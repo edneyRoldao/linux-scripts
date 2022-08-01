@@ -5,4 +5,3 @@ echo "################################################"
 sudo snap install opera
 
 echo "opera install process finished"
-
