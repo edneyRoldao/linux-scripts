@@ -20,11 +20,6 @@ Give exec permission to file:
 chmod +x main-script.sh
 ```
 
-Need to export SSH_API_KEY environment to make personal script works.
-```
-export SSH_API_KEY=wont-works-if-you-dont-know-this
-```
-
 Run main script:
 ```
 ./main-script.sh

@@ -16,7 +16,7 @@ echo "Merging all Dev scritps"
 find ./dev-tools-install -type f -name '*.sh' -exec cat {} + > all-dev-scripts.sh
 
 echo "Merging OS and DEV scripts"
-cat init-script-log.sh all-os-scripts.sh all-dev-scripts.sh personal-scripts/initial-setup.sh end-script-log.sh > main-script.sh
+cat init-script-log.sh all-os-scripts.sh all-dev-scripts.sh end-script-log.sh > main-script.sh
 
 echo "Moving main-script"
 mkdir main
